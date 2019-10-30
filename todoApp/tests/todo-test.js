@@ -29,6 +29,18 @@ describe('ToDoModel', function() {
         });
     });
 
+    describe('#toggle()', function() {
+        it('should toggle completed flag', function() {
+            var sutList = new todoApp.TodoList();
+            var sut = new todoApp.Todo({title: "test"});
+            sutList.add(sut);
+            assert.equal(false, sut.get('completed'));
+            sut.toggle();
+            assert.equal(true, sut.get('completed'));
+            sut.toggle();
+            assert.equal(false, sut.get('completed'));
+        });
+    });
 });
 
 describe('ToDoListModel', function() {
