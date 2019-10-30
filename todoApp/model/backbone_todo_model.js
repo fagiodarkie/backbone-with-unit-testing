@@ -5,6 +5,9 @@ todoApp.Todo = Backbone.Model.extend({
         title: '',
         completed: false
     },
+    toggle: function() {
+        this.save({completed: !this.get('completed')});
+    },
     complete: function() {
         this.set('completed', true);
     }
