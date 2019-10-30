@@ -8,7 +8,7 @@ Usage of a Unix console emulator is highly encouraged.
 
 ## Dependencies ##
 
-We use `npm` as package manager, `Karma` for unit test management, `mocha` as unit test suite` and `chai` for our assertions.
+We use `npm` as package manager, `Karma` for unit test management, `mocha` as unit test suite and `chai` for our assertions.
 
 `Karma` will use one of two reporters: `JUnit` is the default and will create a xml file to hold test results. `progress` is simpler and can be checked via console.
 
