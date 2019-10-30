@@ -1,0 +1,20 @@
+{
+  "name": "backbone-example-with-test",
+  "version": "1.0.0",
+  "description": "A simple Backbone model with client-side unit tests",
+  "main": "tutorial-script.js",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "karma": "^4.4.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-junit-reporter": "^2.0.1",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^6.2.2"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "Jacopo Freddi",
+  "license": "ISC"
+}
