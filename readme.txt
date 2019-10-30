@@ -13,4 +13,12 @@ This will run tests in headless chrome browser, the same as if you ran:
 karma start karma.conf.js
 ```
 
-The test results will be found under test-results/test-results.xml.
+The test results will be found under `test-results/test-results.xml`.
+
+Alternatively, run:
+
+```
+npm test --reporter progress
+```
+
+to have test results directly in console.
