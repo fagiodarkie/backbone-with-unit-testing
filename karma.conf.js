@@ -5,8 +5,15 @@ module.exports = function(config) {
       'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
       'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js',
       'http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js',
-      'backbone_todo_model.js',
-      'todo-test.js'
+      'http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js',
+      {
+        pattern: 'todoApp/model/*.js',
+        type: 'module'
+      },
+      {
+        pattern: 'todoApp/tests/*.js',
+        type: 'module'
+      }
     ],
     reporters: ['junit', 'progress'],
     junitReporter: {
