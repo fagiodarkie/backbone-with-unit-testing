@@ -1,10 +1,3 @@
-/*var assert = require('assert');
-
-var todoApp = require('./backbone_todo_model.js');*/
-'use strict';
-
-//import { todoApp } from './backbone_todo_model.js';
-
 const assert = chai ? chai.assert : require('assert');
 
 describe('ToDoModel', function() {
