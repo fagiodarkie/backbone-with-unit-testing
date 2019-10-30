@@ -1,9 +1,12 @@
 var todoApp = {};
 
-todoApp.Todo = Backbone.Model.extend({
+todoApp.Todo = Backbone.Model.extend({    
     defaults: {
         title: '',
         completed: false
+    },
+    complete: function() {
+        this.set('completed', true);
     }
 });
 

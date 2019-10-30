@@ -8,11 +8,13 @@ module.exports = function(config) {
       'http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js',
       {
         pattern: 'todoApp/model/*.js',
-        type: 'module'
+        type: 'module',
+        watching: true
       },
       {
         pattern: 'todoApp/tests/*.js',
-        type: 'module'
+        type: 'module',
+        watching: true
       }
     ],
     reporters: ['junit', 'progress'],

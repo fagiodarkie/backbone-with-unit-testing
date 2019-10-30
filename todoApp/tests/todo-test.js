@@ -20,6 +20,15 @@ describe('ToDoModel', function() {
             assert.equal(true, sut.get('completed'));
         });
     });
+
+    describe('#complete()', function() {
+        it('should complete todo', function() {
+            var sut = new todoApp.Todo({title: "test"});
+            sut.complete();
+            assert.equal(true, sut.get('completed'));
+        });
+    });
+
 });
 
 describe('ToDoListModel', function() {
