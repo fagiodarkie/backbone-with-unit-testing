@@ -3,7 +3,7 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     files: ['http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js',
         'http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js', 'backbone_todo_model.js', 'todo-test.js'],
-    reporters: ['junit'],
+    reporters: ['junit', 'progress'],
     junitReporter: {
         outputDir: 'test-results',
         outputFile: "test-results.xml",
