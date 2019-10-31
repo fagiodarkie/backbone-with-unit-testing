@@ -24,6 +24,7 @@ describe('ToDoModel', function() {
     describe('#complete()', function() {
         it('should complete todo', function() {
             var sut = new todoApp.Todo({title: "test"});
+            assert.equal(false, sut.get('completed'));
             sut.complete();
             assert.equal(true, sut.get('completed'));
         });
@@ -51,7 +52,7 @@ describe('ToDoListModel', function() {
             var newTodo = new todoApp.Todo({title: 'Learn how to use headless-chrome with ES6 modules'});
             sut.add(newTodo);
             assert.equal(2, sut.size());
-        })
+        });
     });
 
     describe('#pluck', function() {
@@ -59,6 +60,6 @@ describe('ToDoListModel', function() {
             var sut = new todoApp.TodoList([{title: 'Understand ES6 modules'}, {title: 'Learn how to use headless-chrome with ES6 modules', completed: true}]);
             var plucked = sut.pluck('completed');
             expect([false, true]).to.eql(plucked);
-        })
-    })
-})
+        });
+    });
+});

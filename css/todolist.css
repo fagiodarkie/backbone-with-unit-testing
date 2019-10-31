@@ -11,3 +11,9 @@
 #todo-list .editing .toggle {
   display: none;
 }
+
+#todo-list img.destroy {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

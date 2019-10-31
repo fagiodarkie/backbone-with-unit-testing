@@ -6,16 +6,21 @@ module.exports = function(config) {
       'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js',
       'http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js',
       'http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js',
+      'scripts/includehtml.js',
       {
-        pattern: 'todoApp/model/*.js',
+        pattern: 'todoApp/**/*.js',
         type: 'module',
         watching: true
       },
       {
-        pattern: 'todoApp/tests/*.js',
-        type: 'module',
-        watching: true
+        pattern: '*.html',
+        type: 'html',
+        included: false,
+        served: true
       }
+    ],
+    exclude: [
+      'todoApp/tutorial_script.js'
     ],
     reporters: ['junit', 'progress'],
     junitReporter: {

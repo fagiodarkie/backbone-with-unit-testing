@@ -4,24 +4,26 @@ var app = {};
 
 app.TodoView = Backbone.View.extend({
     tagName: 'li',
-    template: _.template($('#item-template').html()),
 
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
-        this.input = this.$('.edit');
-        this.check = this.$('.toggle');
-        return this; // enable chained calls
+        return this;
     },
 
     initialize: function() {
         this.model.on('change', this.render, this);
+        this.model.on('destroy', this.remove, this);
+        this.template = _.template($('#item-template').html());
+        this.input = this.$('.edit');
+        this.check = this.$('.toggle');
     },
 
     events: {
         'dblclick label': 'edit',
         'keypress .edit': 'updateOnEnter',
         'blur .edit': 'close',
-        'click .toggle': 'toggleCompleted'
+        'click .toggle': 'toggleCompleted',
+        'click .destroy': 'destroyItem'
     },
 
     edit: function() {
@@ -43,6 +45,9 @@ app.TodoView = Backbone.View.extend({
     },
     toggleCompleted: function() {
         this.model.toggle();
+    },
+    destroyItem: function() {
+        this.model.destroy();
     }
 });
 
