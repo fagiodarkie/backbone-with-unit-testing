@@ -4,23 +4,44 @@ import { todoApp } from '../model/backbone_todo_model.js';
 
 import { appView } from '../view/backbone_todo_view.js';
 
+import { ui } from '../../scripts/test_utils/ui_utilities.js'
+
 describe('TodoView', function() {
 
-    beforeEach(function() {
-        if (typeof includeHTML !== 'undefined')
-        {
-            $('#test-include-id').remove();
-            $('body').append('<div id="#test-include-id" w3-include-html="base/todoApp-include-content.html"></div>')
-            includeHTML(true);
-        }
+    var todoSut, appSut;
+
+    function initialise() {
+        var res = ui.initialiseView();
+        todoSut = res.todoSut;
+        appSut = res.appSut;
+    };
+
+    before(ui.initTodoDiv);
+
+    afterEach(function() {
+        if (appSut)
+            ui.clearStorage(appSut.todoList);
     });
 
     describe('#constructor', function() {
-        it('should construct with title', function() {
+        it('should construct with model', function() {
             var model = new todoApp.Todo({title: "test"});
-            var sut = new appView.TodoView({model: model});
-            assert.equal("test", model.get('title'));
-            assert.equal(false, model.get('completed'));
+            todoSut = new appView.TodoView({model: model});
+            assert.equal("test", todoSut.model.get('title'));
+            assert.equal(false, todoSut.model.get('completed'));
+        });
+    });
+
+    describe('events', function() {
+        describe('on label doubleclick', function() {
+
+            beforeEach(function() {
+                initialise();
+                ui.createItem();
+            });
+
+            /*it('should start editing', function() {
+            });    */
         });
     });
 });

@@ -8,6 +8,10 @@ module.exports = function(config) {
       'http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js',
       'scripts/includehtml.js',
       {
+        pattern: 'scripts/test_utils/*.js',
+        type: 'module'
+      },
+      {
         pattern: 'todoApp/**/*.js',
         type: 'module',
         watching: true
@@ -17,9 +21,14 @@ module.exports = function(config) {
         type: 'html',
         included: false,
         served: true
+      },
+      {
+        pattern: 'css/*.css',
+        type: 'css'
       }
     ],
     exclude: [
+      'node_modules/*',
       'todoApp/tutorial_script.js'
     ],
     reporters: ['junit', 'progress'],
